@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Test JS</title>
+  <script type="text/javascript" src="test.js"></script>
+  <link rel="stylesheet" href="test.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js"></script>
+  <script src="jQuery.js"></script>
+  <script src='test.js'></script>
+</head>
+    <body>
+    
+        
+
+        
+        <div class="container-fluid px-1 py-5 mx-auto">
+            <div class="row d-flex justify-content-center">
+                <div class="col-xl-5 col-lg-6 col-md-7">
+                    <div class="card b-0">
+                        <h3 class="heading">Effectuer une requête</h3>
+                        <p class="desc">Pour une assistance directe appelez le :<span class="yellow-text">123 456 7891</span><br>Service client à votre écoute</p>
+                        <ul id="progressbar" class="text-center">
+                            <li class="active step0" id="step1"></li>
+                            <li class="step0" id="step2"></li>
+                            <li class="step0" id="step3"></li>
+                            <li class="step0" id="step4"></li>
+                        </ul>
+                        <fieldset class="show">
+                            <div class="form-card">
+                                <h5 class="sub-heading">Selectionner la/les raisons de votre requête</h5>
+                                <div class="row px-1 radio-group" style="display:flex; align-content:center">
+                                    <div class="card-block text-center radio selected">
+                                        <div class="image-icon"> <img class="icon icon1" src="https://i.imgur.com/vZxfo9x.png"> </div>
+                                        <p class="sub-desc">Litige sur la qualité</p>
+                                    </div>
+                                    <div class="card-block text-center radio">
+                                        <div class="image-icon"> <img class="icon icon1 fit-image" src="https://i.imgur.com/HnX40f4.png"> </div>
+                                        <p class="sub-desc">Litige sur le prix</p>
+                                    </div>
+                                    <div class="card-block text-center radio">
+                                        <div class="image-icon"> <img class="icon icon1 fit-image" src="https://i.imgur.com/ynKYPkk.png"> </div>
+                                        <p class="sub-desc">Litige sur la livraison</p>
+                                    </div>
+                                    <div class="card-block text-center radio">
+                                        <div class="image-icon"> <img class="icon icon1 fit-image" src="https://i.imgur.com/6qK7u8Q.png"> </div>
+                                        <p class="sub-desc">Autre demande</p>
+                                    </div>
+                                </div> <button id="next1" class="btn-block btn-primary mt-3 mb-1 next" style="margin-left: 2.5%;">Suivant<span class="fa fa-long-arrow-right"></span></button>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <h5 class="sub-heading mb-4">Détails sur le produit</h5> <label class="text-danger mb-3">* Obligatoire</label>
+                                <div class="form-group"> <label class="form-control-label">Numéro de la commande * :</label> <input type="text" id="fname" name="fname" placeholder="" class="form-control" onblur="validate1(1)"> </div>
+                                <div class="form-group"> <label class="form-control-label">Date de réception * :</label> <input type="text" id="lname" name="lname" placeholder="" class="form-control" onblur="validate1(2)"> </div>
+                                <div class="form-group"> <label class="form-control-label">Email de contact * :</label> <input type="text" id="email" name="email" placeholder="" class="form-control" onblur="validate1(3)"> </div>
+                                <div class="form-group"> <label class="form-control-label">Contact No. * :</label> <input type="text" id="mob" name="mob" placeholder="" class="form-control" onblur="validate1(4)"> </div> 
+                                <button id="next2" class="btn-block btn-primary mt-3 mb-1 next mt-4" style="margin-left: 2.5%;" onclick="validate1(0)">Suivant<span class="fa fa-long-arrow-right"></span></button> 
+                                <button class="btn-block btn-secondary mt-3 mb-1 prev" style="margin-left: 2.5%;"><span class="fa fa-long-arrow-left"></span>Précédent</button>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <h5 class="sub-heading mb-4">Company Details</h5> <label class="text-danger mb-3">* Obligatoire</label>
+                                <div class="form-group"> <label class="form-control-label">Company Name * :</label> <input type="text" id="cname" name="cname" placeholder="" class="form-control" onblur="validate2(1)"> </div>
+                                <div class="form-group"> <label class="form-control-label">Zip Code * :</label> <input type="text" id="zip" name="zip" placeholder="" class="form-control" onblur="validate2(2)"> </div>
+                                <div class="form-group"> <label class="form-control-label">State * :</label> <input type="text" id="state" name="state" placeholder="" class="form-control" onblur="validate2(3)"> </div>
+                                <div class="form-group"> <label class="form-control-label">City * :</label> <input type="text" id="city" name="city" placeholder="" class="form-control" onblur="validate2(4)"> </div>
+                                <div class="form-group"> <label class="form-control-label">Shredding Job Size * :</label>
+                                    <div class="select mb-3"> <select name="shred-info" class="form-control">
+                                            <option>NA</option>
+                                            <option>1-20 boxes</option>
+                                            <option>20-50 boxes</option>
+                                            <option>50-100 boxes</option>
+                                            <option>100+ boxes</option>
+                                        </select> </div>
+                                </div> 
+                                <button id="next3" class="btn-block btn-primary mt-3 mb-1 next mt-4" style="margin-left: 2.5%;" onclick="validate2(0)">Soumettre<span class="fa fa-long-arrow-right"></span></button> 
+                                <button class="btn-block btn-secondary mt-3 mb-1 prev" style="margin-left: 2.5%;"><span class="fa fa-long-arrow-left"></span>Précédent</button>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="form-card">
+                                <h5 class="sub-heading mb-4">Succès!</h5>
+                                <p class="message">Thank You for choosing our website.<br>Quotation will be sent to your Email ID and Contact Number.</p>
+                                <div class="check"> <img class="fit-image check-img" src="https://i.imgur.com/QH6Zd6Y.gif"> </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+    </body>
+</html>
